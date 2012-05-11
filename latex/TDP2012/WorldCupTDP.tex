@@ -51,10 +51,8 @@
 \author{
 {\small
 Camiel Verschoor \and Duncan ten Velthuis \and Auke Wiggers \and
-Michael Cabot \and Anna Keune \and Sander Nugteren \and Hendrik van Egmond, 
-Tim van Rossum \and Hessel van der Molen \and Richard Rozeboom,
-Inge Becht \and Maarten de Jonge \and Richard Pronk \and
-Chiel Kooijman \and Roman Slaap
+Michael Cabot \and Anna Keune \and Sander Nugteren \and Hendrik van Egmond \and Hessel van der Molen \and Richard Rozeboom \and Inge Becht \and Maarten de Jonge \and Richard Pronk \and
+Chiel Kooijman
 \and Arnoud Visser
 }
 }
@@ -86,7 +84,7 @@ Technische Universiteit Delft, Mekelweg 2-4, 2628 CD Delft, NL \\
 \section{Introduction}
 The Dutch Nao Team consists of Artificial Intelligence (AI) Bachelor and Master Students, supported by a senior staff-member.
 %The Dutch Nao Team is the continuation of the Dutch Aibo Team; a cooperation of several Dutch universities who were active in the predecessor of the Standard Platform League \cite{AIBOTeam2006, AIBOTeam2005, AIBOTeam2004}. The Dutch Aibo Team has been successful, both in the competition and with a number of publications \cite{ArnoudJurgen2009, RoboticDog2008, Visser2006, ColorLearning2006, Localization2006, Perception2005}. The Dutch Aibo Team has the tradition to published their source-code online including a technical report about the innovations \cite{Visser2006, Sturm2005, Oomes2005}. 
-The Dutch Nao Team debuted in the Standard Platform League (SPL) competition at the German Open 2010 \cite{DutchNaoTeamTDP2010}. The same year the first research paper about the Nao was published \cite{vanDerMey2011}. 
+The Dutch Nao Team debuted in the Standard Platform League (SPL) competition at the German Open 2010 \cite{DutchNaoTeamTDP2010}. The same year the first research paper about the Nao robot was published \cite{vanDerMey2011}. 
 In 2011 the Dutch Nao Team made its breakthrough by qualifying for the World RoboCup in Istanbul \cite{DutchNaoTeamTDP2011}. At the Iran Open2012 competition the team won for the first time an award (third prize).
 
 Five new students will participate in the team in order to guarantee the continuity of the team. 
@@ -97,11 +95,11 @@ The current team consists of the following persons:
 
 \item[Coordinator:] Duncan ten Velthuis
 \item[Vice Coordinators:] Camiel Verschoor and Auke Wiggers
-\item[Students:] Inge Becht, Maarten de Jonge, Richard Pronk, Chiel Kooijman and Roman Slaap
-\item[Senior Students:] Michael Cabot, Anna Keune, Sander Nugteren, Hendrik van Egmond, Tim van Rossum, Richard Rozeboom
+\item[Students:] Inge Becht, Maarten de Jonge, Richard Pronk and Chiel Kooijman.
+\item[Senior Students:] Michael Cabot, Anna Keune, Sander Nugteren, Hendrik van Egmond, Tim van Rossum and Richard Rozeboom
 \item[Master Students:] Tijmen Blankevoort, Robrecht Jurriaans and Hessel van der Molen
 \item[PhD Student:] Xin Wang
-\item[Supervisors:] Dr. Arnoud Visser, Dr. Koen Hindriks, Prof. Dr. Ir. Pieter Jonker
+\item[Supervisors:] Dr. Arnoud Visser, Dr. Koen Hindriks and Prof. Dr. Ir. Pieter Jonker
 \end{description}
 %\end{comment}
 This year the Dutch Nao Team participated in the following competitions and events:
@@ -141,7 +139,7 @@ Also during the Iran Open 2012 competition a scientific presentation was given, 
 in a master thesis \cite{vanNoort2012msc} and two publications \cite{vanNoort2012permis,vanNoort2012robocup}.
 
 \subsection*{Support}
-The Universiteit van Amsterdam has been active in the RoboCup since Paris 1998. The university has been participated in several leagues (Windmill Wanderers, Clockwork Orange, UvA TriLearn, UvA Rescue, Dutch Aibo Team, Amsterdam Oxford Joint Rescue Forces).
+The Universiteit van Amsterdam has been active in the RoboCup since Paris 1998. The university has participated in several leagues (Windmill Wanderers, Clockwork Orange, UvA TriLearn, UvA Rescue, Dutch Aibo Team, Amsterdam Oxford Joint Rescue Forces).
 The Institute of Informatics supports the team with a fully equiped robot lab (large enough for the Standard Platform League soccer field) and the usage of two academic Nao robots and a package of five v3.3 Nao robots with Nao v4.0 heads.
 
 This year a cooperation with the Technical University Delft has started, which gives us access to four additional Nao robots (v4.0). This is not the first cooperation between these two universities; with Clockwork Orange they participated in the MidSize League and
@@ -179,7 +177,7 @@ One of the recent developments towards vision in C++ is an improved ball-trackin
   \end{center}
 \end{wrapfigure}
 
-During previous competitions calibration was time consuming. One of the goals of the test suite is to build a user-friendly interface that allows us to quickly calibrate the Nao robots for our vision applications. Besides calibration, the Test-Suite will also enable the team to easier view, edit, read and control our code running on the Nao robot. It will also provide the possibility to show self-localization results graphically.
+During previous competitions calibration was time consuming. One of the goals of the test suite is to build a user-friendly interface that allows us to quickly calibrate the Nao robots for our vision applications. Besides calibration, the Test Suite will also enable the team to easier view, edit, read and control our code running on the Nao robot. It will also provide the possibility to show self-localization results graphically.
 The back-end of the test suite (also written in Python) will consist of a complete full-duplex communication system, which will enable sending, writing and reading of variables, data and files in real-time.
 
 
@@ -189,7 +187,7 @@ The Nao robots will communicate using a zeroconf protocol. The  communication be
 For localization the Dutch Nao Team researches multiple methods: Dynamic Tree Localization, a Kalman Filter and a Particle filter. 
 Dynamic Tree Localization \cite{vdMolen2011} splits the field recursively into blocks. Each block holds a probability that a Nao robot is in this block. 
 Besides a probability, a block contains a list with the distance (a range) and the angle (also a range) towards each possible observable feature. 
-As features, the goals and line crossings will be used. Children of a block which hold a probability lower than a certain threshold are removed.
+As features, the goals and line crossings will be used. Children of a block, which hold a probability lower than a certain threshold are removed.
 Is the probability in a block higher than an another threshold, then the block is split. In this way it is possible to maintain a belief over all possible locations without the need to (re)sample.
 It is assumed that such a tree-like structure results in a method with a lower computational complexity compared to other approaches, while it does hold the possibility to create a complex belief. 
 Dynamic Tree Localization can also estimate the location of the Nao robot in a accurate way; is robust against noisy data; can handle kidnapping; and does not have to keep track of previous observed observations \cite{vdMolen2011}.

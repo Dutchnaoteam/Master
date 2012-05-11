@@ -1,21 +1,22 @@
-\documentclass[11pt]{article}
-\usepackage[a4paper,pdftex]{geometry}
-\setlength{\oddsidemargin}{5mm}
-\setlength{\evensidemargin}{5mm}
-\usepackage[english]{babel}
-\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\documentclass[11pt]{llncs}
+%\usepackage[a4paper,pdftex]{geometry}
+%\setlength{\oddsidemargin}{5mm}
+%\setlength{\evensidemargin}{5mm}
+%\usepackage[english]{babel}
+%\usepackage{amsmath,amsfonts,amsthm,amssymb}
 \usepackage{graphicx}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\usepackage{subfig}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\usepackage{subfig}
 \usepackage{wrapfig}
 \usepackage{comment}
 \usepackage{url}
 \urlstyle{same}
 
+\begin{comment}
 % Page numbering
 \lhead{Dutch Nao Team - Team Description for Robocup 2012}
-\rhead{page \thepage/5}
+\rhead{page \thepage/7}
 \cfoot{}
 \rfoot{\thepage}
 
@@ -31,37 +32,43 @@
 \def\printauthor{
     {\centering \large \@author}}
 \makeatother
+\end{comment}
+
 
 % TITLE
 \title{
-\HRule{0.5pt} \\
+%\HRule{0.5pt} \\
 \LARGE \textbf{\textsc{Dutch Nao Team}}\\[0.5cm]
 \normalsize \textsc{Team Description for Robocup 2012 - Mexico City, Mexico}\\
-\texttt{http://www.dutchnaoteam.nl}
-\normalsize
-\HRule{2pt}\\ [0.5cm]
-\normalsize
-\today\\ [0.5cm]
-\includegraphics[width=0.8\textwidth]{team.jpg}
+%\texttt{http://www.dutchnaoteam.nl}
+%\normalsize
+%\HRule{2pt}\\ [0.5cm]
+%\normalsize
+%\today\\ [0.5cm]
+%\includegraphics[width=0.8\textwidth]{team.jpg}
 }
 
 \author{
-{\small Duncan ten Velthuis\footnote{Coordinator}, Camiel Verschoor, Auke Wiggers\footnote{Vice Coordinators} \\
-Michael Cabot, Anna Keune, Sander Nugteren, Hendrik van Egmond, \\
-Tim van Rossum, Hessel van der Molen, Richard Rozeboom\footnote{Senior members} \\
-Inge Becht, Maarten de Jonge, Richard Pronk,
-Chiel Kooijman, Roman Slaap \\
-and Arnoud Visser\footnote{Supervisor}}\\ [0.2cm]
-%\\
-Dutch Nao Team\\
-Faculty of Science\\
-Universiteit van Amsterdam\\
-\texttt{dutchnaoteam@googlegroups.com} \\
+{\small
+Camiel Verschoor \and Duncan ten Velthuis \and Auke Wiggers \and
+Michael Cabot \and Anna Keune \and Sander Nugteren \and Hendrik van Egmond, 
+Tim van Rossum \and Hessel van der Molen \and Richard Rozeboom,
+Inge Becht \and Maarten de Jonge \and Richard Pronk \and
+Chiel Kooijman \and Roman Slaap
+\and Arnoud Visser
+}
 }
 
 
+\institute{
+Universiteit van Amsterdam, Science Park 904, 1098 XH Amsterdam, NL \\
+Technische Universiteit Delft, Mekelweg 2-4, 2628 CD Delft, NL \\
+      \url{http://www.dutchnaoteam.nl}}
+
 % BEGIN DOCUMENT
 \begin{document}
+
+\begin{comment}
 \thispagestyle{empty}
 
 % TITLE PAGE
@@ -71,48 +78,75 @@ Universiteit van Amsterdam\\
 \newpage
 \setcounter{page}{1}
 \normalsize
+\end{comment}
+
+\maketitle
+
 % CONTENT
 \section{Introduction}
 The Dutch Nao Team consists of Artificial Intelligence (AI) Bachelor and Master Students, supported by a senior staff-member.
 %The Dutch Nao Team is the continuation of the Dutch Aibo Team; a cooperation of several Dutch universities who were active in the predecessor of the Standard Platform League \cite{AIBOTeam2006, AIBOTeam2005, AIBOTeam2004}. The Dutch Aibo Team has been successful, both in the competition and with a number of publications \cite{ArnoudJurgen2009, RoboticDog2008, Visser2006, ColorLearning2006, Localization2006, Perception2005}. The Dutch Aibo Team has the tradition to published their source-code online including a technical report about the innovations \cite{Visser2006, Sturm2005, Oomes2005}. 
 The Dutch Nao Team debuted in the Standard Platform League (SPL) competition at the German Open 2010 \cite{DutchNaoTeamTDP2010}. The same year the first research paper about the Nao was published \cite{vanDerMey2011}. 
-In 2011 the Dutch Nao Team made its breakthrough by qualifying for the World RoboCup in Istanbul \cite{DutchNaoTeamTDP2011}. During the Iran Open in April 2012 the third place in Research and Innovation was taken.
+In 2011 the Dutch Nao Team made its breakthrough by qualifying for the World RoboCup in Istanbul \cite{DutchNaoTeamTDP2011}. At the Iran Open2012 competition the team won for the first time an award (third prize).
 
 Five new students will participate in the team in order to guarantee the continuity of the team. 
-\begin{comment}
-%moved to frontpage
+%\begin{comment}
+%moved to frontpage, but for CD we should confirm to the lncs standard.
 The current team consists of the following persons:
 \begin{description}
-\item[Supervisor:] Dr. Arnoud Visser
+
 \item[Coordinator:] Duncan ten Velthuis
 \item[Vice Coordinators:] Camiel Verschoor and Auke Wiggers
-\item[Senior Students:] Michael Cabot, Anna Keune, Sander Nugteren, Hendrik van Egmond, Tim van Rossum, Hessel van der Molen, Richard Rozeboom
 \item[Students:] Inge Becht, Maarten de Jonge, Richard Pronk, Chiel Kooijman and Roman Slaap
+\item[Senior Students:] Michael Cabot, Anna Keune, Sander Nugteren, Hendrik van Egmond, Tim van Rossum, Richard Rozeboom
+\item[Master Students:] Tijmen Blankevoort, Robrecht Jurriaans and Hessel van der Molen
+\item[PhD Student:] Xin Wang
+\item[Supervisors:] Dr. Arnoud Visser, Dr. Koen Hindriks, Prof. Dr. Ir. Pieter Jonker
 \end{description}
-\end{comment}
+%\end{comment}
 This year the Dutch Nao Team participated in the following competitions and events:
 \begin{itemize}
 \item Iran Open (03-04-2012 until 07-04-2012)
 \item Dutch Open demonstration (25-04-2012 until 29-04-2012)
 \item RoBOW 12.2 (11-05-2012 until 13-05-2012)
 \end{itemize}
-\begin{comment}
-Next to participating in competitions, the Dutch Nao Team will also be active at the Dutch Open in Eindhoven (25-04-2012 until 29-04-2012) with the following activities:
+%\begin{comment}
+Next to participating in competitions, the Dutch Nao Team will also be active with the following outreach activities:
 \begin{itemize}
-\item SPL demonstration
-\item Dutch Nao Users Day (workshop organized by Aldebaran)
+\item SPL demonstration (i.e. Rathenau institute)
+%\item Dutch Nao Users Day (workshop organized by Aldebaran)
 \item RoboCup Junior 
+\item Robotics Summerschool
 \end{itemize}
-\end{comment}
+%\end{comment}
+
 \section{Relevant Achievements and Publications}
 %In 2010 the Universiteit van Amsterdam bought two academic editions of the Nao and participated for the first time in the Standard Platform League at the German Open \cite{DutchNaoTeamTDP2010}. 
 The Dutch Nao Team is a continuation of the Dutch Aibo Team, which participated at three competitions and published on several occasions\footnote{See for an overview \url{http://www.dutchnaoteam.nl/index.php/publications/}}. 
 %Since the Dutch Nao Team qualified for the RoboCup in Istanbul, the Universiteit van Amsterdam is now also in the possession of five v3.3 Nao robots. 
-The Dutch Nao Team participated both at the Mediterranean Open 2011 and in the Iran Open 2011.  In Istanbul 2011 the team became second in the first round and survived the elimination round in a penalty shoot-out against SPQR-Chili, resulting in a top 16 position. At the Mediterranean Open Workshop on RoboCup Research a presentation about "RoboTag with a humanoid robot" was given.
+In 2010 the team debuted at the German Open \cite{DutchNaoTeamTDP2010}. In 2011 the team participated both at the Mediterranean Open 2011 and in the Iran Open 2011.
+ At the RoboCup Istanbul 2011 the team became second in the first round and survived the elimination round in a penalty shoot-out against SPQR-Chili, resulting in a top 16 position. 
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.7\textwidth]{team.jpg}
+  \caption{The Dutch Nao Team in Istanbul.}
+\label{fig:team}
+\end{figure}
+
+At the Mediterranean Open Workshop on RoboCup Research a presentation about "RoboTag with a humanoid robot" was given.
 At the RoboCup Iran Open Symposium the paper 'An Experimental Comparison of Mapping Methods, the Gutmann dataset' was published \cite{Visser2011rios}. A summary of this study was presented at the Research Challenge in Istanbul.
+The experiences of this year were summerized in an extensive technical report, which was published together with the source code \cite{DNT2011release}.
+Also during the Iran Open 2012 competition a scientific presentation was given, which ranked as the third place. The work on our simulation platform resulted
+in a master thesis \cite{vanNoort2012msc} and two publications \cite{vanNoort2012permis,vanNoort2012robocup}.
+
 \subsection*{Support}
 The Universiteit van Amsterdam has been active in the RoboCup since Paris 1998. The university has been participated in several leagues (Windmill Wanderers, Clockwork Orange, UvA TriLearn, UvA Rescue, Dutch Aibo Team, Amsterdam Oxford Joint Rescue Forces).
 The Institute of Informatics supports the team with a fully equiped robot lab (large enough for the Standard Platform League soccer field) and the usage of two academic Nao robots and a package of five v3.3 Nao robots with Nao v4.0 heads.
+
+This year a cooperation with the Technical University Delft has started, which gives us access to four additional Nao robots (v4.0). This is not the first cooperation between these two universities; with Clockwork Orange they participated in the MidSize League and
+the Dutch Aibo Team they participated in the 4-Legged League. The TU Delft also participated alone or with other Dutch universities inside the RoboCup (Dutch Robotics, Tech United).
+
 \section{Research}
 %As a junior team, the educational aspect is important. 
 The main focus of the Universiteit van Amsterdam is the combination of Artificial Intelligence and Robotics. The RoboCup initiative provides the team the opportunity to acquire various abilities of many aspects within robotics.
@@ -132,16 +166,23 @@ One of the recent developments towards vision in C++ is an improved ball-trackin
   \caption{Left: Previous balltracking algorithm, the green dots indicates found ball location. Right: Improved vision module using Hough transform and C++.}
 \label{fig:balls}
 \end{figure}
+
 \newpage
-\begin{wrapfigure}{r}{30mm}
+
+\subsection{Test Suite}
+
+\begin{wrapfigure}{r}{0.31\textwidth}
   \begin{center}
-    \vspace{-1.5cm}
+    \vspace{-0.25cm}
     \includegraphics[width=0.3\textwidth]{testsuite.png}
+	\caption{The user interface of our test suite}
   \end{center}
 \end{wrapfigure}
-\subsection{Test Suite}
+
 During previous competitions calibration was time consuming. One of the goals of the test suite is to build a user-friendly interface that allows us to quickly calibrate the Nao robots for our vision applications. Besides calibration, the Test-Suite will also enable the team to easier view, edit, read and control our code running on the Nao robot. It will also provide the possibility to show self-localization results graphically.
 The back-end of the test suite (also written in Python) will consist of a complete full-duplex communication system, which will enable sending, writing and reading of variables, data and files in real-time.
+
+
 \subsection{Communication and Planning}
 The Nao robots will communicate using a zeroconf protocol. The  communication between Nao robots will be kept to a minimum. The players will only act different from their originial behaviour, when a conflict is detected. For example, when two robots see the ball, only the closest robot will try to intercept it, while the behaviour of the other will be overridden. Together with localization and Nao robot recognition, a tactical behaviour can be implemented. For instance, assisting other Nao robots in an attacking state or defensive state.
 \subsection{Localization}
@@ -155,19 +196,20 @@ Dynamic Tree Localization can also estimate the location of the Nao robot in a a
 This localization algorithm will be compared against standard reference algorithms such as a Kalman or Particle filter. 
 % This gives the possibility to compare both systems and to further our research. The latest addition to the the rules, same coloured goals, make it important to have a robust localization system.
 \subsection{Simulator}
-The 3D robot simulation environment (USARSim) is extended with the possibility to reproduce the appearance and the dynamics of generic legged robots and especially a humanoid Nao robot. USARSim is based on the Unreal Engine, which provides facilities for good quality rendering, physics simulation, networking, highly versatile scripting language and a powerful visual editor. Building a realistic simulator implies that interaction models are needed which replicate the dynamics of a walking robot with many body contacts, while maintaining a fast frame rate. Several approximations have been tried, and the performance evaluated. This extension could have a wide application range, which allows people to develop and experiment typical robotic tasks at home, without requiring a real robot.
+The 3D robot simulation environment (USARSim) is extended with the possibility to reproduce the appearance and the dynamics of generic legged robots and especially a humanoid Nao robot \cite{vanNoort2012msc}. USARSim is based on the Unreal Engine, which provides facilities for good quality rendering, physics simulation, networking, highly versatile scripting language and a powerful visual editor. Building a realistic simulator implies that interaction models are needed which replicate the dynamics of a walking robot with many body contacts, while maintaining a fast frame rate \cite{vanNoort2012permis}. Several approximations have been tried, and the performance evaluated. This extension could have a wide application range, which allows people to develop and experiment typical robotic tasks at home, without requiring a real robot.
 \begin{figure}[!ht]
 \centering
 \includegraphics[width = 0.75\textwidth]{sim2012.png} % 0.5 is also OK, but I like to have the conclusion
 \caption{A simulation of a Nao robot in USARSIM environment}
 \end{figure}
-The development of this open source simulation is not only valuable inside the Standard Platform League, but should also be interesting for the Soccer Simulation League and the @ Home League. Outside the RoboCup community this simulation could be valuable for Human-Robot Interaction research.
+The development of this open source simulation is not only valuable inside the Standard Platform League, but should also be interesting for the Soccer Simulation League and the @ Home League \cite{vanNoort2012robocup}. Outside the RoboCup community this simulation could be valuable for Human-Robot Interaction research.
 \subsection{Motion Control}
 The motions of last year will be improved by making them more robust and secure. Examples of these motions are the keeper dive, the heelkick and the sidekicks. A few of those innovations are demonstrated in the 2012 Qualification video\footnote{See for a larger overview \url{http://www.dutchnaoteam.nl/index.php/media/movies}}. Thanks to the development of a realistic Nao simulation, it is easier to develop new motions, either manually or by supervised learning.
 \section{Conclusion}
-The Dutch Nao Team will continue using its unique Python based approach and extend it with C++ based modules. This year we hope to show the benefits of a global localization technique as the Dynamic Tree Localization algorithm and improve our behaviour modules based on this additional information.
+The Dutch Nao Team will continue using its unique Python based approach and extend it with C++ based modules. Our progess was shown at the 2012 Iran Open competition, 
+where the third price was won. In Mexico we hope to show the benefits of a global localization technique as the Dynamic Tree Localization algorithm and improve our behaviour modules based on this additional information.
 Coordination between the robots will result in joint behaviours as attacking, defending or even passing.
-\bibliographystyle{plain}
+\bibliographystyle{splncs}
 \bibliography{references} 
 \end{document}
 % END DOCUMENT

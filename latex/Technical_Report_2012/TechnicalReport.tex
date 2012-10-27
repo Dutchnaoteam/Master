@@ -76,85 +76,33 @@ A total of six teams competed in the Iran Open Standard Platform League:
 \end{enumerate}
 
 \subsubsection{Matches}
-In total 5 matches were played. Two matches were lost, with 0-6 to AUTMan and 0-2 to MRL. The match against Berlin United and Kourettes ended up in a tie (both 0-0) and the match against DreamingSP was won with 1-0.
-The main problem in the competitions was that the vision. The Naos recognised a ball often outside of the field. The Naos also had problems with connection to the network so communication could not be tested in the matches.
-
-
-\subsubsection{Developments}
-
-Significant progress was made throughout the week, especially in the main program controlling the flow of states and the vision department (goal recognition). At the start of the tournament the Aldebaran's balltracking module was used. However, a different method was implemented, which used Python OpenCV (an image processing library).
-
-\subsection{RoboCup Istanbul}
-\begin{figure}[htb]    	
-\centering
-\fbox{\includegraphics[width=0.5\columnwidth]{TeamPhotoIstanbul.jpg}}
-\caption{The Dutch Nao Team in Istanbul}
-\label{fig:TeamPhotoIstanbul}
-\end{figure}
-
-Twenty-seven teams from all over the world competed in the RoboCup 2011. We've played against a few of them:
-\begin{enumerate}
-\item Austen-Villa (Texas), lost, 0-5
-\item Nao Team Humboldt (Germany), one draw, 0-0 and one loss, 0-3
-\item SPQR+Chile (Italy and Chile), match ended 1-1, won this match through penalty shootout. This was by far the most exciting and the most visually unattractive match.
-\item B-Human (Germany), lost, 0-10
-\item UPennalizers (Pennsylvania), lost, 1-3 (note: one own goal)
-\item MRL, lost practice match, 0-3
-\end{enumerate}
-From this opponents three teams reached the quarter finals, and one was the later champion.
-Each of these matches posed a chance to see the programs capability of coping with real life conditions (instead of testing in ideal situations). The only matches in which our robot team suffered from severe technical problems were the matches against SPQR+Chile and B-Human. Tweaking and bug fixing was done in between matches while larger changes were made during the night following the matches of that day. It should be noted that the match against B-Human was played with code that was not yet tested in a practice match.
+In total 5 matches were played. Two matches were lost, with 0-6 to AUTMan and 0-2 to MRL. The match against Berlin United and Kourettes ended up in a tie (both 0-0), and the match against DreamingSP was won with 1-0.
+The main problem in the competitions was with the vision. The Naos recognised a ball often outside of the field. The Naos also had problems with connection to the network so communication could not be tested in the matches.
 
 \subsubsection{Developments}
-Major progress was made in the main program, goalrecognition, the gamecontroller-listener and buttoninterface, apart from tweaking and bugfixes.
-
-The so-called Soul, where state and phase changes are specified, is the Dutch Nao Team's approach to the game problem. It can be seen as a state machine where situations in the game are represented as the states (see section \ref{sec:architecture}). Several improvements were made, apart from tweaking and bugfixes:
-\begin{itemize}
-\item Better use of balltracking throughout the program (e.g. more checks to see if ball is still there or keeping track of ball at all time)
-\item Initialization possible in Set state instead of initializing variables in Initial. The former resulted in technical difficulties during a penalty shootout.
-\item Keeper uses six instead of eight ball-locations, resulting in faster but slightly less accurate keeping. Possible because of more precise balltracking.
-\item Stricter conditions for Nao to kick a ball, to make sure the Nao does not kick without a ball being there. 
-\end{itemize}
-
-The goalrecognition algorithm was rewritten entirely, resulting in faster goalrecognition (see section \ref{sec:goalrecognition}). This improved the algorithm with a factor ten as the algorithm is more efficient.
-
-The gamecontroller was functional before Istanbul but caused problems due the presence of several other gamecontrollers. Because of their presence the robots started listening to the other gamecontroller causing the program to crash. This phenomenon was solved by reading out the incoming message of the gamecontroller and check whether it broadcasted the team id.
-
-The button interface was also functional before Istanbul but caused minor problems due to variation in the pressing of the chest button. Some referees pressed the button longer than others causing the robots to switch off entirely or play on without being penalized. This problem has been partially solved by instead of checking if a button is pressed, check if it has been released.
+Due to the above mentioned problems the first steps towards a calibration tool were made for simple color calibration, as well as a bounding box implementation so that the Naos no longer could find a ball outside of the field.
 
 \subsubsection{Open Challenge}
 \label{sec:zoneblocking}
 
-For the Open Challenge the ZoneBlocking project was presented. This section describes what it is and how it is performed (see Appendix~\ref{app:open_challenge_june}).\\\\
-{\bf Relative positioning using trigonometry}\\
-To position itself in the desired spot, a Nao needs to not only recognize their current position, but also the desired spot to move to. This was achieved by using copious amounts of trigonometrical techniques.\\\\
-{\bf Movement and positioning}\\
-After scanning for environmental features, calculating the Nao's relative position to them, and doing the math involved in finding the desired standing location, certain motions were necessary to get there. Since the Nao's walking functions curve slightly to the left and have some overshoot, it was decided that it would be best if small movements were made of about twenty centimetres each. For each twenty centimetres walked, the Nao will stop, turn facing the goal, and re-estimate its walking path. Then, it will continue on its way considering the new measurements. During one of these checks, if the Nao is found standing within the error margin of twenty centimetres, the walk cycle terminates. The Nao will then determine its angle to the goal and use this information to turn away from it, facing the opponents' goal.
+For the Open Challenge multiple projects were presented to show  possible ...
+We came in third for the open challenge as 
 
-This, in contrast to the initial positioning, is done in one move, to block the line between the goal and the opponent. Using the relative location of the attacking Nao and the assumptions to the location of the (unseen) goal, it is possible to move the Nao into the opponent's line while wasting as little time as possible. This gives a set of blobs that should correspond to opposing Nao’s waistbands. These blobs are used to extract the locations of the left and right edges, using these to calculate the angles to the defending Nao (the Dutch Nao Team had already done calculations on this, so for this step the pre-existing method was simply used). The width of the waistband will also directly correspond to the distance of the Nao. 
+\subsection{RoboCup Mexico}
 
-During the competition the code of ZoneBlocking was adjusted to the circumstances in Istanbul. Unfortunately, it was too difficult to get the relative position to the goal stable enough for a demonstration during the Open Challenge. As alternative, an demonstration based on Dynamic Tree Localization was proposed (see Appendix~\ref{app:open_challenge_july}). The proposal got rejected and a presentation about ZoneBlocking was given without a demonstration.
+Twenty-four teams from all over the world competed in the RoboCup 2011. We've played against a few of them:
+\begin{enumerate}
+\item rUNSwift, lost, 0-10
+\item RoboCanes, won by distance in the penalty round
+\item The Portugese team, match ended 1-1, lost by penalty round with 1-2
+\end{enumerate}
+The biggest problem faces in Mexico was the difficulty with connecting to the network (something every team had to try and cope with) but mostly the fact that the state of the code was not so it could be run easily, resulting in crashes of the robots.
+\subsubsection{Developments}
+A lot fo the time onely fixes were made to the already existing code.
 
-\subsubsection{Research Presentation}
-Because only a limited amount of time (3 minutes) was given to present about a current research topic, a presentation was given like an Ignite talk\footnote{Scott Berkun - "Why and How to Give an Ignite Talk", Ep 19. Video uploaded 23 jun 2009 \url{http://www.youtube.com/watch?v=rRa1IPkBFbg}}. 
-The research topic was a short summary of the contribution of the team to the RoboCup Iran Open Symposium 2011 \cite{Visser2011rios}, as indicated in Fig.~\ref{fig:TitlePresentation}.
 
-\begin{figure}[htb]
-\centering
-\fbox{\includegraphics[width=0.5\columnwidth]{ComparisonSLAMrobocup2011TitlePage.png}}
-\caption{Title page of the Research Presentation}
-\label{fig:TitlePresentation}
-\end{figure}
 
-In the presentation was shown that a RoboCup soccer field is a popular benchmark for localization, but is only sparsely used as a benchmark for SLAM-algorithms. 
-With a limited size this benchmark has no scaling issues, while the uncertainty in the sensor and motion model are high enough to be challenging, which was the message to take home as indicated in Fig.~\ref{fig:ConclusionPresentation}. With the same sensor and  motion model three SLAM algorithms were compared: EKF-SLAM, FastSLAM 1.0 and FastSLAM 2.0 \cite{Thrun2005}. In this small world the classic EKF-SLAM algorithm gave the best result, as expected.
 
-\begin{figure}[htb]    	
-\centering
-\fbox{\includegraphics[width=0.5\columnwidth]{ComparisonSLAMrobocup2011Conclusion.png}}
-\caption{Conclusion of the Research Presentation}
-\label{fig:ConclusionPresentation}
-\end{figure}
-\newpage
 \section{Program}
 The program used in the RoboCup 2011 is written solely in Python. It is compatible with Python versions 2.61. OpenCV for Python is used, mainly for image processing. The files used are all original files written by members of the Dutch Nao Team. Different files are used for different sections, for instance, motions are all specified in a single file and not in the file containing the main program.
 \subsection{Architecture}
@@ -505,16 +453,16 @@ Furthermore, it is a new years resolution to attend more events for speeches as 
 And last, but not least, we would like to refer to the following site: \url{http://www.freepublicity.nu/}. Unfortunately we ran across this website at the end of this past year, but you can find lots of tips and trics there for the PR department.
 
 \section{Travel}
-The Dutch Nao Team travelled to Italy, Iran and Turkey to participate in competitions. For every journey, several arrangements had been made. This section describes, which arrangements were made.
+The Dutch Nao Team travelled this year to Iran and Mexico to participate in competitions. For every journey, several arrangements had been made. This section describes, which arrangements were made.
 
 %\subsection{Rome}
 % The people participated did not want to share their travel experience and preparations
 
 \subsection{Teheran}
-This was a special journey as the Dutch Nao Team got invited by the organizing party (Qazvin University) and the costs for travel and stay were fully covered by them. Therefore, only the flight had to be booked and a visa had to be requested. It is important to do these two on time as both require some time. For the visa, the required documents have to be sent to the organizing committee, which will respond to you when the visa can be requested at the consulate in Den Haag. The organizing committee will make an official invitation letter for the participating members. To request the visa in Den Haag all participating members have to be present at the consulate. Requesting a visa can take up to one day. The flight was booked after a confirmation of the organizing committee was received. Before leaving, a document~\cite{Verschoor2011Iran} of all important facts about the country was sent to all participating members. This was to make sure that participating members were informed about the background of the country, possible required vaccinations, laws and uses of the inhabitants and advice about staying in the country. In Iran, the stay, transport, food, tours of the city were all organized by the committee. 
+This was a special journey as the Dutch Nao Team got invited by the organizing party (Qazvin University) and the costs for travel and stay were fully covered by them. Therefore, only the flight had to be booked and a visa had to be requested. It is important to do these two on time as both require some time. For the visa, the required documents have to be sent to the organizing committee, which will respond to you when the visa can be requested at the consulate in Den Haag. The organizing committee will make an official invitation letter for the participating members. To request the visa in Den Haag all participating members have to be present at the consulate. Requesting a visa can take up to one day. The flight was booked after a confirmation of the organizing committee was received. Before leaving, a document~\cite{Verschoor2012Iran} of all important facts about the country was sent to all participating members. This was to make sure that participating members were informed about the background of the country, possible required vaccinations, laws and uses of the inhabitants and advice about staying in the country. In Iran, the stay, transport, food, tours of the city were all organized by the committee. 
 
-\subsection{Istanbul}
-This journey was to the RoboCup2011 where all international teams participated in a robot football World Cup tournament. The flight and hotel were booked quite late causing the price of the flight to be higher. A nice hostel was found nearby the location of the event (name of the hostel is Han hostel, located near Atatürk airport and the Expo Center, where the RoboCup was held). Again, a document~\cite{Verschoor2011Istanbul} was made with important facts about the country. Next to that a packing list with necessary materials was made. In Istanbul, breakfast and lunch was bought from the nearby supermarket. Dinner was bought and consumed at nearby restaurants. The shuttle service of the hostel was used to travel from hostel to Expo Center and vice versa. Public transport and the taxi were used only to travel into the city for sightseeing. The last day of the journey was spend sightseeing around the city of Istanbul. Several cultural locations were visited by most of the participating members.
+\subsection{Mexico}
+This journey was to the RoboCup2012 where all international teams participated in a robot football World Cup tournament. The flight and hotel were booked quite late causing the price of the flight to be higher. A nice hotel was found nearby the location of the event (name of the hotel is El Diplomatico (located near the World Trade Center where the RoboCup was held). Breakfast and lunch was bought from the nearby supermarket. Dinner was bought and consumed at nearby restaurants. We traveled mostly by foot to the Robocup revenue, and sometimges using public transport. The first week of the journey was spend sightseeing around Mexico-city.
 
 \subsection{Tips for the next journey}
 This section describes the advice to the organizers of next year. The following points are important to take into account for next year:
@@ -543,14 +491,16 @@ On May 28th, the DNT had a small stand at the RoboCup Junior at NEMO, where the 
 The goal of the Dutch Nao Demo Day is to bring different Nao-owners that live in the Netherlands together, show each other the demonstrations created in the different institutes in the Netherlands and create - in a shared effort - one big demonstration, which is shown at the end of the day in the theatre of the science center NEMO. This was and (will hopefully remain) an excellent opportunity to show the efforts of the Dutch Nao Team to the public. 
 
 \section{Evaluation and Future Improvements}
-The Dutch Nao Teams debut in the RoboCup2011 exceeded our expectations. Not only did we score the very first official goal (6 goals in total), we also improved almost every aspect of the code during and after the RoboCup. We found that playing a match in real life is the best evaluation you can have. 
+
+The Dutch Nao Teams second year has made some progress from the previous year. The first steps towards closed loop motions has been explored, although not yet implemented into the code at this point. Some tools were developed to ease the setup before a game, making it less of a hassle to ready the Naos before the match.
 
 \subsection{Future work}
-The Dutch Nao Team has only worked with open-loop motions until now. The main goal for 2012 is to either create a stable closed-loop walking motion (or base it on Aldebarans omnidirectional walk) or create a fully dynamic kick. Falling during a kick was one of the main problems in this years RoboCup. A faster gait would be an important improvement because this teams robots are currently the slowest in the competition.
+The Dutch Nao Team would like to further develop clodes loop motions, either by making a closed loop gait or create a fully dynamic kick. Falling during a kick was one of the main problems in this years RoboCup. A faster gait would be an important improvement because this teams robots are currently the slowest in the competition.
 
-Communication between players, which was not used during this RoboCup, is already possible through modules provided by Aldebaran. It is quite useful - even without localization. During the matches, all players (except the goalkeeper) would all move towards the ball simultaneously, causing them to collide, fall or be penalized for pushing other players. Deciding which player should move towards the ball is possible if information about the relative location of the ball is shared with other players.
+Further the idea of rewriting all code into C++ is a possibility.
 
-Nao-recogntion was already implemented for use in the ZoneBlocking project (see section \ref{sec:zoneblocking}. However, the algorithm as it is now is a slow, straightforward process which can not be used if it is not improved or rewritten. Ball-recognition and the new goal-recognition algorithm (see section \ref{sec:vision}) could also be made more efficient by giving motion calls for the neck joint are during calculations instead of afterwards.
+Line detection was not further explored this year, but would be a good to add to the arsenal.
+
 
 \subsubsection{Line Detection}
 To find a line on the field, an image is filtered on white pixels (lines are white). In this filtered image, the Houghlines algorithm, found in OpenCV \cite[p.~156]{Bradski2008}, can find lines. Using (intensity) thresholds, lines with corresponding accumulator value greater than the threshold are returned. It is also possible to input a minimal required length for a line. When a line is partially invisible, the algorithm can reconstruct the line. An additional parameter is the maximum length a gap between lines can be before its not considered to be the same line. 

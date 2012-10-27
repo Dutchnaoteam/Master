@@ -1,0 +1,65 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Qualification}{}% 2
+\BOOKMARK [1][-]{section.3}{Competitions}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Rome Open}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Matches}{subsection.3.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Developments}{subsection.3.1}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Iran Open}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Matches}{subsection.3.2}% 8
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Developments}{subsection.3.2}% 9
+\BOOKMARK [2][-]{subsection.3.3}{RoboCup Istanbul}{section.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Developments}{subsection.3.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Open Challenge}{subsection.3.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Research Presentation}{subsection.3.3}% 13
+\BOOKMARK [1][-]{section.4}{Program}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Architecture}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.2}{Vision}{section.4}% 16
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Blob and Nao detection}{subsection.4.2}% 17
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Goal Recognition Algorithm}{subsection.4.2}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Motion}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.4}{Communication}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.5}{File architecture}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.6}{Localization}{section.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.6.1}{The Algorithm}{subsection.4.6}% 23
+\BOOKMARK [3][-]{subsubsection.4.6.2}{The Experiments}{subsection.4.6}% 24
+\BOOKMARK [3][-]{subsubsection.4.6.3}{The Visualizer}{subsection.4.6}% 25
+\BOOKMARK [3][-]{subsubsection.4.6.4}{DTL on a Nao}{subsection.4.6}% 26
+\BOOKMARK [2][-]{subsection.4.7}{Simulation}{section.4}% 27
+\BOOKMARK [1][-]{section.5}{Installation Guide}{}% 28
+\BOOKMARK [2][-]{subsection.5.1}{Requirements}{section.5}% 29
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Program}{subsection.5.1}% 30
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Simulation}{subsection.5.1}% 31
+\BOOKMARK [2][-]{subsection.5.2}{Guide}{section.5}% 32
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Program}{subsection.5.2}% 33
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Simulation}{subsection.5.2}% 34
+\BOOKMARK [1][-]{section.6}{Sponsors}{}% 35
+\BOOKMARK [2][-]{subsection.6.1}{Preparations}{section.6}% 36
+\BOOKMARK [2][-]{subsection.6.2}{Contacting companies}{section.6}% 37
+\BOOKMARK [1][-]{section.7}{Public Relations}{}% 38
+\BOOKMARK [2][-]{subsection.7.1}{Getting started}{section.7}% 39
+\BOOKMARK [2][-]{subsection.7.2}{Making the script}{section.7}% 40
+\BOOKMARK [3][-]{subsubsection.7.2.1}{The script in general}{subsection.7.2}% 41
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Audience}{subsection.7.2}% 42
+\BOOKMARK [3][-]{subsubsection.7.2.3}{Objective}{subsection.7.2}% 43
+\BOOKMARK [3][-]{subsubsection.7.2.4}{Message}{subsection.7.2}% 44
+\BOOKMARK [2][-]{subsection.7.3}{Achievements}{section.7}% 45
+\BOOKMARK [2][-]{subsection.7.4}{Points of improvement for next year}{section.7}% 46
+\BOOKMARK [1][-]{section.8}{Travel}{}% 47
+\BOOKMARK [2][-]{subsection.8.1}{Teheran}{section.8}% 48
+\BOOKMARK [2][-]{subsection.8.2}{Istanbul}{section.8}% 49
+\BOOKMARK [2][-]{subsection.8.3}{Tips for the next journey}{section.8}% 50
+\BOOKMARK [1][-]{section.9}{Management}{}% 51
+\BOOKMARK [2][-]{subsection.9.1}{Season 2010-2011}{section.9}% 52
+\BOOKMARK [2][-]{subsection.9.2}{Season 2011-2012}{section.9}% 53
+\BOOKMARK [2][-]{subsection.9.3}{RoboCup Junior/Dutch Nao Demo Day}{section.9}% 54
+\BOOKMARK [1][-]{section.10}{Evaluation and Future Improvements}{}% 55
+\BOOKMARK [2][-]{subsection.10.1}{Future work}{section.10}% 56
+\BOOKMARK [3][-]{subsubsection.10.1.1}{Line Detection}{subsection.10.1}% 57
+\BOOKMARK [3][-]{subsubsection.10.1.2}{Kinect your Nao: A human interface}{subsection.10.1}% 58
+\BOOKMARK [1][-]{section.11}{Acknowledgements}{}% 59
+\BOOKMARK [1][-]{section.12}{Appendix}{}% 60
+\BOOKMARK [2][-]{subsection.12.1}{Team Poster}{section.12}% 61
+\BOOKMARK [2][-]{subsection.12.2}{Open Challenge Document June}{section.12}% 62
+\BOOKMARK [2][-]{subsection.12.3}{Open Challenge Document July}{section.12}% 63
+\BOOKMARK [2][-]{subsection.12.4}{Press release}{section.12}% 64
+\BOOKMARK [2][-]{subsection.12.5}{File Overview}{section.12}% 65

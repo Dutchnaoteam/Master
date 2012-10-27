@@ -11,58 +11,58 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Developments}{7}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}Open Challenge}{8}{subsubsection.3.3.2}
 \contentsline {subsubsection}{\numberline {3.3.3}Research Presentation}{8}{subsubsection.3.3.3}
-\contentsline {section}{\numberline {4}Program}{10}{section.4}
-\contentsline {subsection}{\numberline {4.1}Architecture}{10}{subsection.4.1}
+\contentsline {section}{\numberline {4}Program}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Architecture}{9}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Vision}{12}{subsection.4.2}
 \contentsline {subsubsection}{\numberline {4.2.1}Blob and Nao detection}{12}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}Goal Recognition Algorithm}{13}{subsubsection.4.2.2}
-\contentsline {subsection}{\numberline {4.3}Motion}{14}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.3}Motion}{13}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Communication}{14}{subsection.4.4}
 \contentsline {subsection}{\numberline {4.5}File architecture}{14}{subsection.4.5}
 \contentsline {subsection}{\numberline {4.6}Localization}{15}{subsection.4.6}
 \contentsline {subsubsection}{\numberline {4.6.1}The Algorithm}{15}{subsubsection.4.6.1}
-\contentsline {subsubsection}{\numberline {4.6.2}The Experiments}{16}{subsubsection.4.6.2}
+\contentsline {subsubsection}{\numberline {4.6.2}The Experiments}{15}{subsubsection.4.6.2}
 \contentsline {subsubsection}{\numberline {4.6.3}The Visualizer}{17}{subsubsection.4.6.3}
 \contentsline {subsubsection}{\numberline {4.6.4}DTL on a Nao}{17}{subsubsection.4.6.4}
 \contentsline {paragraph}{Beacon Observation / Landmark detection}{18}{section*.14}
 \contentsline {paragraph}{Adjusting the field and landmark signatures}{18}{section*.16}
-\contentsline {paragraph}{Showing remote the Nao's belief}{19}{section*.17}
+\contentsline {paragraph}{Showing remote the Nao's belief}{18}{section*.17}
 \contentsline {subsection}{\numberline {4.7}Simulation}{19}{subsection.4.7}
 \contentsline {section}{\numberline {5}Installation Guide}{20}{section.5}
 \contentsline {subsection}{\numberline {5.1}Requirements}{20}{subsection.5.1}
 \contentsline {subsubsection}{\numberline {5.1.1}Program}{20}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}Simulation}{21}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2}Simulation}{20}{subsubsection.5.1.2}
 \contentsline {subsection}{\numberline {5.2}Guide}{21}{subsection.5.2}
 \contentsline {subsubsection}{\numberline {5.2.1}Program}{21}{subsubsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.2}Simulation}{21}{subsubsection.5.2.2}
 \contentsline {section}{\numberline {6}Sponsors}{22}{section.6}
 \contentsline {subsection}{\numberline {6.1}Preparations}{22}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Contacting companies}{23}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.2}Contacting companies}{22}{subsection.6.2}
 \contentsline {section}{\numberline {7}Public Relations}{23}{section.7}
 \contentsline {subsection}{\numberline {7.1}Getting started}{23}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Making the script}{23}{subsection.7.2}
 \contentsline {subsubsection}{\numberline {7.2.1}The script in general}{23}{subsubsection.7.2.1}
 \contentsline {subsubsection}{\numberline {7.2.2}Audience}{23}{subsubsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.3}Objective}{24}{subsubsection.7.2.3}
-\contentsline {subsubsection}{\numberline {7.2.4}Message}{24}{subsubsection.7.2.4}
+\contentsline {subsubsection}{\numberline {7.2.3}Objective}{23}{subsubsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.4}Message}{23}{subsubsection.7.2.4}
 \contentsline {subsection}{\numberline {7.3}Achievements}{24}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}Points of improvement for next year}{24}{subsection.7.4}
-\contentsline {section}{\numberline {8}Travel}{25}{section.8}
-\contentsline {subsection}{\numberline {8.1}Teheran}{25}{subsection.8.1}
+\contentsline {section}{\numberline {8}Travel}{24}{section.8}
+\contentsline {subsection}{\numberline {8.1}Teheran}{24}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Istanbul}{25}{subsection.8.2}
 \contentsline {subsection}{\numberline {8.3}Tips for the next journey}{25}{subsection.8.3}
-\contentsline {section}{\numberline {9}Management}{26}{section.9}
-\contentsline {subsection}{\numberline {9.1}Season 2010-2011}{26}{subsection.9.1}
+\contentsline {section}{\numberline {9}Management}{25}{section.9}
+\contentsline {subsection}{\numberline {9.1}Season 2010-2011}{25}{subsection.9.1}
 \contentsline {subsection}{\numberline {9.2}Season 2011-2012}{26}{subsection.9.2}
 \contentsline {subsection}{\numberline {9.3}RoboCup Junior/Dutch Nao Demo Day}{26}{subsection.9.3}
 \contentsline {section}{\numberline {10}Evaluation and Future Improvements}{26}{section.10}
-\contentsline {subsection}{\numberline {10.1}Future work}{27}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.1}Future work}{26}{subsection.10.1}
 \contentsline {subsubsection}{\numberline {10.1.1}Line Detection}{27}{subsubsection.10.1.1}
 \contentsline {subsubsection}{\numberline {10.1.2}Kinect your Nao: A human interface}{27}{subsubsection.10.1.2}
 \contentsline {section}{\numberline {11}Acknowledgements}{29}{section.11}
-\contentsline {section}{\numberline {12}Appendix}{33}{section.12}
-\contentsline {subsection}{\numberline {12.1}Team Poster}{33}{subsection.12.1}
-\contentsline {subsection}{\numberline {12.2}Open Challenge Document June}{34}{subsection.12.2}
-\contentsline {subsection}{\numberline {12.3}Open Challenge Document July}{35}{subsection.12.3}
-\contentsline {subsection}{\numberline {12.4}Press release}{36}{subsection.12.4}
-\contentsline {subsection}{\numberline {12.5}File Overview}{37}{subsection.12.5}
+\contentsline {section}{\numberline {12}Appendix}{32}{section.12}
+\contentsline {subsection}{\numberline {12.1}Team Poster}{32}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Open Challenge Document June}{33}{subsection.12.2}
+\contentsline {subsection}{\numberline {12.3}Open Challenge Document July}{34}{subsection.12.3}
+\contentsline {subsection}{\numberline {12.4}Press release}{35}{subsection.12.4}
+\contentsline {subsection}{\numberline {12.5}File Overview}{36}{subsection.12.5}

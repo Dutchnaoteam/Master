@@ -41,7 +41,7 @@ The Dutch Nao Team consists of Artificial Intelligence students from the Univers
 The Dutch Aibo Team always published their source-code online including a technical report about the innovations \cite{Visser2006}.
 The Dutch Nao Team will continue this tradition. The Dutch Nao Team debuted in the SPL competition at the German Open 2010 \cite{DutchNaoTeamTDP2010}.\\
 
-Since the team consists of twenty-three members, the responsibilities have been distributed over our team as follows:
+The responsibilities have this year been distributed over our team as follows:
 \begin{description}
 \item[Supervisor:] Dr. Arnoud Visser % (assistant professor Intelligent Systems Lab Amsterdam) %assistent professor is a combination of researcher and teacher
 \item[Coordinator:] Duncan ten Velthuis
@@ -53,38 +53,9 @@ Since the team consists of twenty-three members, the responsibilities have been 
 \end{description}
 
 \section{Qualification}
-The team that participated in the German Open 2010 \cite{DutchNaoTeamTDP2010} consisted of only two students. Over the summer the team was extended to twenty-three students. This team had their first meeting in October 2010. 
-
-That day the commitment was made to travel to Istanbul for the RoboCup 2011. In December a qualification document \cite{DutchNaoTeamQualification} and qualification video\footnote{Available at \url{http://www.youtube.com/watch?v=p9rWsUJ1lZ4}} were produced. The qualification document described the research that was to be performed in the upcoming months and how this was to be achieved.
+This year the Dutch Nao Team made the commitment to travel to Mexico City for the RoboCup 2012. In December a qualification document \cite{DutchNaoTeamQualification} and qualification video\footnote{Available at \url{http://www.youtube.com/watch?v=laCXVb2dtPQ&list=PLCFE0DE27EB5C8C9D&index=1&feature=plpp_video}} were produced. The qualification document described the research that was to be performed in the upcoming months and how this was to be achieved.
 
 \section{Competitions}
-
-\subsection{Rome Open}
-
-\begin{figure}[htb]    	
-\centering
-\fbox{\includegraphics[width=0.5\columnwidth]{TeamPhotoRome.jpg}}
-\caption{The Dutch Nao Team in Rome}
-\label{fig:TeamPhotoRome}
-\end{figure}
-
-The teams that competed in the Rome Open Standard Platform League were:
-\begin{enumerate}
-\item SPQR+UChile (Italy + Chile)
-\item SpelBots (USA)
-\item Austrian Kangaroos (Austria)
-\item Portuguese Team (Portugal)
-\item Dutch NAO Team (The Netherlands)
-\item Los Hidalgos (Spain)
-\end{enumerate}
-
-\subsubsection{Matches}
-The first match was lost against the Austrian Kangaroos (0-1), and the second match ended in a tie against Los Hidalgos (0-0). The third match was again against the Austrian Kangaroos (0-3). The last match was again a tie against Los Hidalgos (0-0).
-Later the Spanisch and Austrian team played the final of the Rome Open, so it was a pitty that the Dutch Nao Team played no matches against teams in the other pool. 
-The team gained experience from the matches and due to this the implementation of the program was improved.
-
-\subsubsection{Developments}
-Due to a local power cut the game controller could not broadcast any game information as all servers were down. Therefore all teams were forced to use a button interface. The team was not prepared as the button interface was not yet implemented. An attempt was made to make one overnight, but this was unsuccessful.
 
 \subsection{Iran Open}
 \begin{figure}[htb]    	
@@ -94,22 +65,22 @@ Due to a local power cut the game controller could not broadcast any game inform
 \label{fig:TeamPhotoTeheran}
 \end{figure}
 
-A total of five teams competed in the Iran Open Standard Platform League:
+A total of six teams competed in the Iran Open Standard Platform League:
 \begin{enumerate}
-\item Nao Team Humboldt (Germany), first place
-\item Cerberus (Turkey), second place
-\item MRL (Iran), third place
-\item Kouretes+Noxious (Greece/United Kingdom, Oxford joined to form this team)
-\item Dutch Nao Team (our team)
+\item AUTMan (Iran), first place
+\item MRL (Iran), second place
+\item Berlin United (Germany), shared third place
+\item Dutch Nao Team, shared third place
+\item Kouretes (Greece)
+\item DreamwingSP
 \end{enumerate}
 
 \subsubsection{Matches}
-Due to bad preparation and an unfinished program loader, which is required to start up the program automatically, most of the matches resulted in failure with either no robots on the field or robots that were initiated manually.
- Two matches were last, one match ended in a tie. These matches were against Cerberus (0-4), NTH (0-2) and Kouretes-Noxious (0-0; lost through penalty shootout). Although not visible in the results, many improvements were added to the code.
-Again, this was a good opportunity to experience real matches and get used to the process of a tournament. During this tournament the team came across some essential missing elements in the program.
+In total 5 matches were played. Two matches were lost, with 0-6 to AUTMan and 0-2 to MRL. The match against Berlin United and Kourettes ended up in a tie (both 0-0) and the match against DreamingSP was won with 1-0.
+The main problem in the competitions was that the vision. The Naos recognised a ball often outside of the field. The Naos also had problems with connection to the network so communication could not be tested in the matches.
+
 
 \subsubsection{Developments}
-The most important development was that the chin camera was used instead of the camera on the forehead. It was quite a surprise when the team found that the Nao can see the ball when standing directly in front of it, while the team (and even the scientific advisor) had always assumed that the forehead camera was the only one in use.
 
 Significant progress was made throughout the week, especially in the main program controlling the flow of states and the vision department (goal recognition). At the start of the tournament the Aldebaran's balltracking module was used. However, a different method was implemented, which used Python OpenCV (an image processing library).
 

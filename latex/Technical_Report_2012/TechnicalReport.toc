@@ -23,10 +23,10 @@
 \contentsline {section}{\numberline {5}Installation Guide}{13}{section.5}
 \contentsline {subsection}{\numberline {5.1}Requirements}{13}{subsection.5.1}
 \contentsline {subsubsection}{\numberline {5.1.1}Program}{13}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}Simulation}{13}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2}Simulation}{14}{subsubsection.5.1.2}
 \contentsline {subsection}{\numberline {5.2}Guide}{14}{subsection.5.2}
 \contentsline {subsubsection}{\numberline {5.2.1}Program}{14}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Simulation}{14}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2}Simulation}{15}{subsubsection.5.2.2}
 \contentsline {section}{\numberline {6}Sponsors}{15}{section.6}
 \contentsline {subsection}{\numberline {6.1}Preparations}{15}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Contacting companies}{16}{subsection.6.2}
@@ -35,22 +35,22 @@
 \contentsline {subsection}{\numberline {7.2}Making the script}{16}{subsection.7.2}
 \contentsline {subsubsection}{\numberline {7.2.1}The script in general}{16}{subsubsection.7.2.1}
 \contentsline {subsubsection}{\numberline {7.2.2}Audience}{16}{subsubsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.3}Objective}{16}{subsubsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.3}Objective}{17}{subsubsection.7.2.3}
 \contentsline {subsubsection}{\numberline {7.2.4}Message}{17}{subsubsection.7.2.4}
 \contentsline {subsection}{\numberline {7.3}Achievements}{17}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}Points of improvement for next year}{17}{subsection.7.4}
-\contentsline {section}{\numberline {8}Travel}{17}{section.8}
+\contentsline {section}{\numberline {8}Travel}{18}{section.8}
 \contentsline {subsection}{\numberline {8.1}Teheran}{18}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Mexico}{18}{subsection.8.2}
 \contentsline {subsection}{\numberline {8.3}Tips for the next journey}{18}{subsection.8.3}
-\contentsline {section}{\numberline {9}Public Relations}{18}{section.9}
-\contentsline {section}{\numberline {10}Evaluation and Future Improvements}{18}{section.10}
+\contentsline {section}{\numberline {9}Public Relations}{19}{section.9}
+\contentsline {section}{\numberline {10}Evaluation and Future Improvements}{19}{section.10}
 \contentsline {subsection}{\numberline {10.1}Future work}{19}{subsection.10.1}
 \contentsline {subsubsection}{\numberline {10.1.1}Line Detection}{19}{subsubsection.10.1.1}
 \contentsline {section}{\numberline {11}Acknowledgements}{19}{section.11}
-\contentsline {section}{\numberline {12}Appendix}{21}{section.12}
-\contentsline {subsection}{\numberline {12.1}Team Poster}{21}{subsection.12.1}
-\contentsline {subsection}{\numberline {12.2}Open Challenge Document June}{22}{subsection.12.2}
-\contentsline {subsection}{\numberline {12.3}Open Challenge Document July}{23}{subsection.12.3}
-\contentsline {subsection}{\numberline {12.4}Press release}{24}{subsection.12.4}
-\contentsline {subsection}{\numberline {12.5}File Overview}{25}{subsection.12.5}
+\contentsline {section}{\numberline {12}Appendix}{22}{section.12}
+\contentsline {subsection}{\numberline {12.1}Team Poster}{22}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Open Challenge Document June}{23}{subsection.12.2}
+\contentsline {subsection}{\numberline {12.3}Open Challenge Document July}{24}{subsection.12.3}
+\contentsline {subsection}{\numberline {12.4}Press release}{25}{subsection.12.4}
+\contentsline {subsection}{\numberline {12.5}File Overview}{26}{subsection.12.5}

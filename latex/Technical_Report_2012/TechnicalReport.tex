@@ -289,7 +289,28 @@ The development of this open source simulation of a Nao robot not only valuable 
 Some various tools have been developed to ease preparation before a match. 
 
 \subsubsection{Calibation Tool}
-One thing that proved to be a problem in tournaments was color calibration. Previously this was done manually by taking samples of an image and kind of estimating what the color range would be. This led to a lot of inaccuracy and difficulty in finding the ball and goalposts. This has been alleviated with a graphical calibration tool written in C++ with Qt. It allows the user to load an image and select an area, either through dragging rectangles or a magic wand tool. It then ouputs the HSV range (minimum and maximum values for the hue, saturation and value) of the select area(s) (see image \ref{fig:calibrationtool}).
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{calibration_tool1.jpg}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{calibration_tool2.png}
+    \end{subfigure}
+    \caption{The graphical calibration tool}
+    \label{fig:calibrationtool}
+\end{figure}
+One thing that proved to be a problem in tournaments was color calibration.
+Previously this was done manually by taking samples of an image and kind of
+estimating what the color range would be. This led to a lot of inaccuracy and
+difficulty in finding the ball and goalposts. This has been alleviated with a
+graphical calibration tool written in C++ with Qt. It allows the user to load an
+image and select an area, either through dragging rectangles or a magic wand
+tool. It then ouputs the HSV range (minimum and maximum values for the hue,
+saturation and value) of the select area(s) (see image
+\ref{fig:calibrationtool}).
 
 \subsubsection{Preparation Script}
 To ease the preparation for a match, a Python script has been made to find all Nao robots on the network using Avahi and automatically push code and a generated naoinfo.txt. 

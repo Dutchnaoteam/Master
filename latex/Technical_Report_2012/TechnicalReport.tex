@@ -1,5 +1,5 @@
-\documentclass[11pt,a4paper,oneside]{article}
-\usepackage{fullpage}
+\documentclass[a4paper]{article}
+\usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{comment}
@@ -10,46 +10,58 @@
 \usepackage{subcaption}
 \usepackage{chngpage}
 
+% Page style
+\pagestyle{fancy}
+\lhead{Dutch Nao Team - Technical Report}
+\cfoot{}
+\rfoot{\thepage}
+
+% Page settings
+
+
 \begin{document}
-\title{\textbf{Dutch Nao Team}}
-\author{\textbf{Technical Report 2012}\\ 
-\url{http://www.dutchnaoteam.nl}\\\\
-Faculty of Science, Universiteit van Amsterdam, The Netherlands}
+% Front Page
+\thispagestyle{empty}
+\title{\LARGE\textsc{Dutch Nao Team}\\\normalsize \textsc{Technical Report 2011-2012}\\\url{http://www.dutchnaoteam.nl}}
+\author{Faculty of Science, Universiteit van Amsterdam, The Netherlands}
 \date{\today}
 \maketitle
 
 \begin{figure}[htb]    	
 \centering
-\fbox{\includegraphics[width=1\columnwidth]{TeamPhotoTeheran.jpg}}
+\fbox{\includegraphics[width=\columnwidth]{TeamPhotoTeheran.jpg}}
 %\caption{The Dutch Nao Team}
 \label{fig:TeamPhoto}
 \end{figure}
 
-\begin{figure}[htb]    	
+\begin{figure}[htb]
 \centering
-\includegraphics[width=0.3\columnwidth]{DNTLogo.png} % logo may look better when smaller
+\includegraphics[width=0.4\columnwidth]{logo_2012.jpg} % logo may look better when smaller
 %\includegraphics{DNTLogo.png} % real size of image
 %\caption{The Dutch Nao Team Logo} % looks better without caption
 \label{fig:DNTLogo}
 \end{figure}
 
-\newpage
+\clearpage
+% Content page
+\thispagestyle{empty}
 \tableofcontents
+\thispagestyle{empty}
+
 \newpage
+\setcounter{page}{1}
 \section{Introduction}
 The Dutch Nao Team consists of Artificial Intelligence students from the Universiteit van Amsterdam, supported by a senior staff-member. The Dutch Nao Team is the continuation of the Dutch Aibo Team; a cooperation of several Dutch universities who were active in the predecessor of the Standard Platform League \cite{AIBOTeam2006, AIBOTeam2005, AIBOTeam2004}. The Dutch Aibo Team has been successful, both in the competition and with a number of publications \cite{ArnoudJurgen2009, RoboticDog2008, Panoramic2007, ColorLearning2006, Localization2006, Perception2005}.
 The Dutch Aibo Team always published their source-code online including a technical report about the innovations \cite{Visser2006}.
 The Dutch Nao Team will continue this tradition. The Dutch Nao Team debuted in the SPL competition at the German Open 2010 \cite{DutchNaoTeamTDP2010}.\\
 
-The responsibilities have this year been distributed over our team as follows:
+\noindent The responsibilities have this year been distributed over our team as follows:
 \begin{description}
 \item[Supervisor:] Dr. Arnoud Visser % (assistant professor Intelligent Systems Lab Amsterdam) %assistent professor is a combination of researcher and teacher
-\item[Coordinator:] Duncan ten Velthuis
-\item[Vice-coordinators:] Camiel Verschoor, Auke Wiggers
+\item[Management:] Duncan ten Velthuis, Camiel Verschoor and Auke Wiggers.
 \item[Programmers:] Auke Wiggers, Chiel Kooijman, Hessel van der Molen, Inge
     Becht, Maarten de Jonge, Michael Cabot, Richard Pronk, Sander Nugteren,
-    Tijmen Blankevoort, Erik van Egmond, Anna Keune
-\item[Sponsors:] Placeholder
+    Tijmen Blankevoort, Erik van Egmond and Anna Keune.
 \end{description}
 
 \section{Qualification}

@@ -83,10 +83,9 @@ The main problem in the competitions was with the vision. The Naos recognised a 
 Due to the above mentioned problems the first steps towards a calibration tool were made for simple color calibration, as well as a bounding box implementation so that the Naos no longer could find a ball outside of the field.
 
 \subsubsection{Open Challenge}
-\label{sec:zoneblocking}
 
-For the Open Challenge multiple projects were presented to show  possible ...
-We came in third for the open challenge as 
+For the Open Challenge multiple projects were presented that were worked on by members of the Dutch Nao Team, such as \ref{}\ref{}
+The presentation ended up earning the third place of the open challende
 
 \subsection{RoboCup Mexico}
 
@@ -99,9 +98,6 @@ Twenty-four teams from all over the world competed in the RoboCup 2011. We've pl
 The biggest problem faces in Mexico was the difficulty with connecting to the network (something every team had to try and cope with) but mostly the fact that the state of the code was not so it could be run easily, resulting in crashes of the robots.
 \subsubsection{Developments}
 A lot fo the time onely fixes were made to the already existing code.
-
-
-
 
 \section{Program}
 The program used in the RoboCup 2011 is written solely in Python. It is compatible with Python versions 2.61. OpenCV for Python is used, mainly for image processing. The files used are all original files written by members of the Dutch Nao Team. Different files are used for different sections, for instance, motions are all specified in a single file and not in the file containing the main program.
@@ -163,7 +159,19 @@ Calls to other aspects of the program (vision and motion) are made through inter
 \subsection{Vision}
 \label{sec:vision}
 % Michael
-The ball- and goal-detection are based on color filters. Prior to a match calibration is needed to set the HSV-color-ranges of the red ball, yellow goal and blue goal. These ranges are then used to filter the image taken by the Nao resulting in a grayscale image. When detecting the ball the filtered image is smoothed to remove any noise. If the brightest pixel passes a threshold then this is assumed to be the ball. The position of the ball is calculated by projecting that pixel onto the ground using the location and orientation of the camera when the snapshot was taken. The goal is detected by appending vertical lines in the filtered image to form blobs. These blobs are tested to see if any describes a goalpost. If two posts are found then the angle towards the goal is calculated.
+The ball- and goal-detection are based on color filters. Prior to a match calibration is needed to set the HSV-color-ranges of the red ball, yellow goal and blue goal. These ranges are then used to filter the image taken by the Nao resulting in a grayscale image. When detecting the ball the filtered image is smoothed to remove any noise. If the brightest pixel passes a threshold then this is assumed to be the ball. The position of the ball is calculated by projecting that pixel onto the ground using the location and orientation of the camera when the snapshot was taken. A small improvement of this ball tracking algorithm of last year is the use of bounding boxes to prevent searching the ball outside of the playing field, by filtering on the color of green (figure \ref{fig:boundbox_ball} shows this smalle improvement). 
+
+\begin{figure}[htb]    	
+\centering
+\includegraphics[width=0.8\columnwidth]{boundbox.png} % logo may look better when smaller
+%\includegraphics{DNTLogo.png} % real size of image
+\caption{Using a bounding box approach to minimize the ball search space} % looks better without caption
+\label{fig:boundbox_ball}
+\end{figure}
+
+This prevents that the Nao will find the ball outside of the field and in environmental noise(which has been often the case in previous matches).
+
+The goal is detected by appending vertical lines in the filtered image to form blobs. These blobs are tested to see if any describes a goalpost. If two posts are found then the angle towards the goal is calculated.
 
 All the vision components were set up so to run parallel with each other. This was removed in the latest release of the program to prevent overheating of the Nao's head.  
 
@@ -202,8 +210,20 @@ Algorithm step-by-step (the threshold $t$ is 20)
 	\item Return the two largest groups.
 	\end{itemize}
 \end{itemize}
+
 \subsection{Motion}
-All of the motions designed are keyframe motions, the kicks being a special case. The kick and back kick are given an angle (angle to the goal) as input. The result is an open-loop motion kicking the ball in the specified angle. The keeper movements are of our own design. We use the walk engine by Aldebaran which is a stable omnidirectional walk. Get-up motions are improved versions of the motions provided in Choreographe. 
+The first steps towards designing a dynamic kick were made this year. A multiple of
+modules have been constructed to solve this problem \cite{Becht2012}.
+Using a  forward kinematics module it now is possible to 
+find the position of a limp relative to one of the legs. This forward
+kinematics module also gives the possibility to locate the Center of Mass and
+is used in a Center of Mass based P-controller to keep the Center of Mass above the
+Support Polygon. A second balancer uses online data in the foot sensors to correct outside interferences from other Naos during a competition. 
+
+Another critical part of dynamic motion that has been mastered is the Inverse Kinematics. This has been approached by the damped least squares method, in which the desired position is approached over multiple iterations. Due to time constraints the module is written in C++ instead of our usual Python but uses a Python SWIG wrapper to easily communicate with the rest of the Python code.
+ 
+At the moment all of the motions used in matches are still keyframe motions. The kick and back kick are given an angle (angle to the goal) as input. The result is an open-loop motion kicking the ball in the specified angle. The keeper movements are of our own design. We use the walk engine by Aldebaran which is a stable omnidirectional walk. Get-up motions are improved versions of the motions provided in Choreographe.
+
 
 \subsection{Communication}
 \label{sec:communication}
@@ -234,83 +254,8 @@ To make matters even easier, interfaces (\texttt{motionInterface} and \texttt{vi
 It would not be aesthetically pleasing to make these function calls in the main program every time a vision call is made. 
 The vision interface is well used; the motion interface is implemented merely for completeness (as vision is comparable to motion, both are straightforward tasks that do not alter the flow of the main program directly, unlike the game controller and button interface). The game controller and button interface are each specified in a file to make testing and altering individual functions easier.
 
-\subsection{Localization}
-While not yet implemented into \texttt{soul.py} a novel localization method has been developed: Dynamic Tree Localization (DTL). The algorithm is tested with the Gutmann dataset~\cite{Gutmann2002} and is currently extended to work on a NAO.
 
-All the DTL code, the used datasets and the code used to test the algorithm can be found at the website\footnote{\url{http://hesselvandermolen.dyndns.org/BachelorProject/index.php?page=Doc}}. To run the code, Python 2.61, OpenCV 2.1 and Pygame 1.9.1 have to be installed. The code is only tested with the 32bit Windows versions of the necessary programs. It is however assumed that it should be able to work on multiple platforms and with newer versions which are backwards compatible.
-
-\subsubsection{The Algorithm}
-Dynamic Tree Localization is a localization method which uses a k-d tree \cite{Bentley1975} to represent the belief of a robot. The root node of the belief-tree represents the complete environment. Each sub-node (child) represents a smaller area of the environment than its parent node. The total surface-size described by all children of a node equals the surface-size of the parent-node:
-$$
-surface(child_1) \oplus surface(child_2) \oplus ... \oplus surface(child_n) = surface(parent)
-$$
-To each node a probability is assigned which describes the likelihood that the robot can be found in the represented area. From this, the pose estimation of a robot is calculated. Collapsing and expanding of nodes is done using sets of rules (constraints). For more details about DTL see Appendix~\ref{app:open_challenge_july} and \cite{BscThesisHesselDTL}.
-
-\subsubsection{The Experiments}
-To test DTL, the Gutmann dataset is used~\cite{Gutmann2002}. This dataset is a 58 minute recording of a walking AIBO ERS 2100 (equipped with a CMOS camera). The robot walked multiple times an 8-figure in a 3x2m environment. In this environment 6 different color beacons were placed for recognition. The robot was joy-sticked around 5 different mark-points. Each time the robot passed a mark-point, a tag was added to the dataset. Besides the distance and angle towards the color-beacons, the odometry estimation of the robot also got recorded. An overview of the environment is shown in Fig. \ref{fig:GutmannEnvironment}.
-
-\begin{figure}
-\centering
-\includegraphics[width=9cm]{fieldsetup.png}
-\caption{The environment used to create the Gutmann dataset.}
-\label{fig:GutmannEnvironment}
-\end{figure}
-
-To repeat the performed experiments to determine the average error towards a mark-point for DTL (as described in~\cite{BscThesisHesselDTL}), the file \textit{testLocalization.py} has to be used. By calling \texttt{testLocalization.mainBase()}, the error toward each mark-point for different tree-sizes ($d_{max} \in \{6, 8, 10, 12\}$), collapse (0.1 to 0.6 is steps of 0.1) and expand (0.4 to 0.8 in steps of 0.05) thresholds are calculated. The results are stored in log-files which can be processed by using the \textit{accuracy.sh} script provided by Gutmann\footnote{see: \url{http://cres.usc.edu/radishrepository/view-one.php?name=comparison_of_self-localization_methods_continued}}. Executing the kidnap-test works in a similar way: calling \texttt{testLocalization.mainKidnap(treeDepth, poseFile)} results in a log-file \texttt{poseFile} which contains all information to be able to be processed by Gutmann's \textit{recoverTime.cpp}. The variable \texttt{treeDepth} is the maximum depth of a tree of which the belief consists. In the code the expand and collapse threshold are set to respectively 0.45 and 0.2.
-
-It turned out that a tree with a depth of 8 nodes results in the best performance \cite{BscThesisHesselDTL}. In Fig.~\ref{fig:DTLdepth8} the localization error results are shown. The smallest absolute error is 194mm with expand and collapse conditions of respectively $<0.45$ and $<0.2$. With these conditions a tree with a maximum depth of 10 nodes performs slightly better in accuracy (an error of 193mm) but is slower with re-localization (kidnapping): 4.1 seconds for $d_{max} = 8$ and 4.8 seconds for $d_{max} = 10$. 
-
-\begin{figure}
-\centering
-\includegraphics[width=8cm]{threshold_t8.png}
-\caption{Accuracy-test results with a maximum tree-depth of 8 nodes.}
-\label{fig:DTLdepth8}
-\end{figure}
-
-Comparing the performance of the current implementation of DTL with the tests performed by Gutmann,~\cite{Gutmann2002}, it can be seen that the absolute error of DTL is twice as big as the absolute error of the adaptive MCL implementation of Gutmann (193mm versus 87mm). The re-localization time is somewhere in the middle of the performance of the by Gutmann tested methods. 
-
-\subsubsection{The Visualizer}
-To get a visual overview of the belief of a robot created by DTL, a GUI is build using Pygame: \textit{visualizer.py}. In Fig. \ref{fig:DTLGUI} a screen-shot of the GUI is shown. In the pane on the right side of the GUI the color and name of all landmarks are shown. Left to this pane the color of each probability is shown, from 1 (turquoise) to 0 (dark blue). The left pane shows the environment of the robot, with the landmarks represented as colored circles. The colored rectangles represent a leaf in the robots belief-tree. The color shows the probability and the small circle with line inside a rectangle represents the assumed heading of the robot in the covered area. The large black circle and line represents the ground truth of the robot, while the white circle and line represents the estimated position and heading.
-
-To start the visualizer, execute \texttt{visualizer.initGUI()}. The GUI will immediately start reading observations from the dataset. The GUI consists of two parts. The first part initializes the window, while the second part starts the loop (needed by Pygame) which updates the screen with the new belief.
-
-Adjusting the maximum tree-depth, expand and collapse thresholds is done in \textit{localization.py}. Setting the data-files (for reading and writing) is done in the Pygame-loop in \textit{visualizer.py}.
-
-\begin{figure}
-\centering
-\includegraphics[width=12cm]{DTL_GUI.png}
-\caption{A screen-shot of the GUI for DTL.}
-\label{fig:DTLGUI}
-\end{figure}
-
-
-\subsubsection{DTL on a Nao}
-Since DTL is build using the same program versions which run on our Naos, DTL itself works on the robot. It however needed a module which returns observations and a server-client connection to show the robots belief, remote, on a computer. For the first a module is build which returns the distance and angle towards color beacons (as used in the Gutmann experiments) given a picture of the Nao's bottom camera. The latter evolved into a server-client structure which is able to stream images from the Nao to a computer.
-
-\paragraph{Beacon Observation /  Landmark detection} \indent \\
-To test DTL on a Nao, the Nao needs to be able to detect some landmarks. For this job, six colored beacons are used: pink-yellow-white, yellow-pink-white, blue-yellow-white, yellow-blue-white, pink-blue-white and blue-pink-white. Detection of the beacons is done by combining the blob-detection algorithm, \cite{vanBellen2011}, created for the RoboCup Open Challenge, with functions from the Vision-Module of \texttt{soul}. 
-
-The module (\textit{beaconObs.py}) starts by taking a picture with the Nao's bottom camera. Then, the system applies for each color (blue, pink and yellow) the blob-detection algorithm. The found blobs are combined with each other and if two different colored blobs are within a specified threshold of each other, a landmark is detected. Using the determined pixel-position of the boundary between two colors of a landmark, and a reading of the Nao's pose, the distance and angle towards the landmark in the real world is calculated. In Fig. \ref{fig:BeaconObs} a shot of the landmark detection is shown. The red squares are detected blobs, the blue ones are the detected boundaries between two colors of a landmark (and thus defined as \textit{being} a landmark). As can be seen, a landmark is only detected if the two colored-blobs are above each other (center of the Figure: the horizontal landmark). When two landmark colors of different objects are above each other, the algorithm claims to see a landmark (top right corner: a goal is matched with a landmark).
-
-Calling \texttt{beaconObs.getBeaconObsImg()} activates the landmark detection module. It performs all steps: from taking a picture to calculating the heading and angle and returning the information. The variable \texttt{obs} in \texttt{beaconObs.getBeaconObsImg()} holds the list with distance, angle and landmark signature of the detected landmarks. An overlay of the detected blobs (as shown in  Fig. \ref{fig:BeaconObs}) on the taken picture is stored in the variable \texttt{im} in the same function.
-
-\begin{figure}
-\centering
-\includegraphics[width=6cm]{beaconDetection.png}
-\caption{Beacon detection.}
-\label{fig:BeaconObs}
-\end{figure}
-
-\paragraph{Adjusting the field and landmark signatures} \indent \\
-Adjusting the field size and the landmark signatures with its corresponding location is done in \textit{field\_tree.py}. When adjusting the field size, the dictionary \texttt{D2C} has to be adjusted. If landmarks signatures or landmark positions have to be changed, the variable \texttt{FIELD} needs to be adaptsed. Instruction on how to change these variables can be found in \textit{field\_tree.py}.
-
-\paragraph{Showing remote the Nao's belief} \indent \\
-To visualize the robot's belief remote, a client-server connection has to be made. For this connection the \texttt{socket}-module of Python is used. The current communication is not yet fully compatible with the DTL software due to some optimization and changes in the client-server communication. 
-
-The client-server code consists of two different programs: \textit{clientStream.py} and \textit{serverStream.py}. In both files a step-by-step guide can be found on how to setup a connection. The communication between the server and client takes place in turn-take manner: the server sends a request for data (and waits), the client responds by sending the data (and waits for a new command), at which the server in its turn responds with a new request (and waits). In this system the client and the server are only processing information when they receive a command (client) or data (server). After sending information the system goes idle, until it receives again.
-
-Our current implementation is only able to handle OpenCV images. This, however, creates the possibility to see in a real-time manner the result of e.g. filters on a camera image or an image of the belief of the position of the robot.
-
+%Removed localisation... Should be added?
 
 \subsection{Simulation}
 
@@ -339,6 +284,14 @@ Currently the walking behavior is fine tuned by letting the real and simulated r
 
 The development of this open source simulation of a Nao robot not only valuable inside the Standard Platform League, but should also be interesting for the Soccer Simulation League and the @ Home League. Outside the RoboCup community this simulation could be valuable for Human-Robot Interaction research.
 
+\subsection{Tools}
+Some various tools have been developed to ease preparation before a match. 
+
+\subsubsection{Calibation Tool}
+One thing that proved to be a problem in tournaments was color calibration. Previously this was done manually by taking samples of an image and kind of estimating what the color range would be. This led to a lot of inaccuracy and difficulty in finding the ball and goalposts. This has been alleviated with a graphical calibration tool written in C++ with Qt. It allows the user to load an image and select an area, either through dragging rectangles or a magic wand tool. It then ouputs the HSV range (minimum and maximum values for the hue, saturation and value) of the select area(s) (see image \ref{fig:calibrationtool}).
+
+\subsubsection{Preparation Script}
+To ease the preparation for a match, a Python script has been made to find all Nao robots on the network using Avahi and automatically push code and a generated naoinfo.txt. 
 
 \section{Installation Guide}
 \subsection{Requirements}

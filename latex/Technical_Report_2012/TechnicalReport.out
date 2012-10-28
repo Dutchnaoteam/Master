@@ -15,47 +15,45 @@
 \BOOKMARK [2][-]{subsection.4.3}{Motion}{section.4}% 15
 \BOOKMARK [2][-]{subsection.4.4}{Communication}{section.4}% 16
 \BOOKMARK [2][-]{subsection.4.5}{File architecture}{section.4}% 17
-\BOOKMARK [2][-]{subsection.4.6}{Localization}{section.4}% 18
-\BOOKMARK [3][-]{subsubsection.4.6.1}{The Algorithm}{subsection.4.6}% 19
-\BOOKMARK [3][-]{subsubsection.4.6.2}{The Experiments}{subsection.4.6}% 20
-\BOOKMARK [3][-]{subsubsection.4.6.3}{The Visualizer}{subsection.4.6}% 21
-\BOOKMARK [3][-]{subsubsection.4.6.4}{DTL on a Nao}{subsection.4.6}% 22
-\BOOKMARK [2][-]{subsection.4.7}{Simulation}{section.4}% 23
-\BOOKMARK [1][-]{section.5}{Installation Guide}{}% 24
-\BOOKMARK [2][-]{subsection.5.1}{Requirements}{section.5}% 25
-\BOOKMARK [3][-]{subsubsection.5.1.1}{Program}{subsection.5.1}% 26
-\BOOKMARK [3][-]{subsubsection.5.1.2}{Simulation}{subsection.5.1}% 27
-\BOOKMARK [2][-]{subsection.5.2}{Guide}{section.5}% 28
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Program}{subsection.5.2}% 29
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Simulation}{subsection.5.2}% 30
-\BOOKMARK [1][-]{section.6}{Sponsors}{}% 31
-\BOOKMARK [2][-]{subsection.6.1}{Preparations}{section.6}% 32
-\BOOKMARK [2][-]{subsection.6.2}{Contacting companies}{section.6}% 33
-\BOOKMARK [1][-]{section.7}{Public Relations}{}% 34
-\BOOKMARK [2][-]{subsection.7.1}{Getting started}{section.7}% 35
-\BOOKMARK [2][-]{subsection.7.2}{Making the script}{section.7}% 36
-\BOOKMARK [3][-]{subsubsection.7.2.1}{The script in general}{subsection.7.2}% 37
-\BOOKMARK [3][-]{subsubsection.7.2.2}{Audience}{subsection.7.2}% 38
-\BOOKMARK [3][-]{subsubsection.7.2.3}{Objective}{subsection.7.2}% 39
-\BOOKMARK [3][-]{subsubsection.7.2.4}{Message}{subsection.7.2}% 40
-\BOOKMARK [2][-]{subsection.7.3}{Achievements}{section.7}% 41
-\BOOKMARK [2][-]{subsection.7.4}{Points of improvement for next year}{section.7}% 42
-\BOOKMARK [1][-]{section.8}{Travel}{}% 43
-\BOOKMARK [2][-]{subsection.8.1}{Teheran}{section.8}% 44
-\BOOKMARK [2][-]{subsection.8.2}{Mexico}{section.8}% 45
-\BOOKMARK [2][-]{subsection.8.3}{Tips for the next journey}{section.8}% 46
-\BOOKMARK [1][-]{section.9}{Management}{}% 47
-\BOOKMARK [2][-]{subsection.9.1}{Season 2010-2011}{section.9}% 48
-\BOOKMARK [2][-]{subsection.9.2}{Season 2011-2012}{section.9}% 49
-\BOOKMARK [2][-]{subsection.9.3}{RoboCup Junior/Dutch Nao Demo Day}{section.9}% 50
-\BOOKMARK [1][-]{section.10}{Evaluation and Future Improvements}{}% 51
-\BOOKMARK [2][-]{subsection.10.1}{Future work}{section.10}% 52
-\BOOKMARK [3][-]{subsubsection.10.1.1}{Line Detection}{subsection.10.1}% 53
-\BOOKMARK [3][-]{subsubsection.10.1.2}{Kinect your Nao: A human interface}{subsection.10.1}% 54
-\BOOKMARK [1][-]{section.11}{Acknowledgements}{}% 55
-\BOOKMARK [1][-]{section.12}{Appendix}{}% 56
-\BOOKMARK [2][-]{subsection.12.1}{Team Poster}{section.12}% 57
-\BOOKMARK [2][-]{subsection.12.2}{Open Challenge Document June}{section.12}% 58
-\BOOKMARK [2][-]{subsection.12.3}{Open Challenge Document July}{section.12}% 59
-\BOOKMARK [2][-]{subsection.12.4}{Press release}{section.12}% 60
-\BOOKMARK [2][-]{subsection.12.5}{File Overview}{section.12}% 61
+\BOOKMARK [2][-]{subsection.4.6}{Simulation}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.7}{Tools}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.7.1}{Calibation Tool}{subsection.4.7}% 20
+\BOOKMARK [3][-]{subsubsection.4.7.2}{Preparation Script}{subsection.4.7}% 21
+\BOOKMARK [1][-]{section.5}{Installation Guide}{}% 22
+\BOOKMARK [2][-]{subsection.5.1}{Requirements}{section.5}% 23
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Program}{subsection.5.1}% 24
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Simulation}{subsection.5.1}% 25
+\BOOKMARK [2][-]{subsection.5.2}{Guide}{section.5}% 26
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Program}{subsection.5.2}% 27
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Simulation}{subsection.5.2}% 28
+\BOOKMARK [1][-]{section.6}{Sponsors}{}% 29
+\BOOKMARK [2][-]{subsection.6.1}{Preparations}{section.6}% 30
+\BOOKMARK [2][-]{subsection.6.2}{Contacting companies}{section.6}% 31
+\BOOKMARK [1][-]{section.7}{Public Relations}{}% 32
+\BOOKMARK [2][-]{subsection.7.1}{Getting started}{section.7}% 33
+\BOOKMARK [2][-]{subsection.7.2}{Making the script}{section.7}% 34
+\BOOKMARK [3][-]{subsubsection.7.2.1}{The script in general}{subsection.7.2}% 35
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Audience}{subsection.7.2}% 36
+\BOOKMARK [3][-]{subsubsection.7.2.3}{Objective}{subsection.7.2}% 37
+\BOOKMARK [3][-]{subsubsection.7.2.4}{Message}{subsection.7.2}% 38
+\BOOKMARK [2][-]{subsection.7.3}{Achievements}{section.7}% 39
+\BOOKMARK [2][-]{subsection.7.4}{Points of improvement for next year}{section.7}% 40
+\BOOKMARK [1][-]{section.8}{Travel}{}% 41
+\BOOKMARK [2][-]{subsection.8.1}{Teheran}{section.8}% 42
+\BOOKMARK [2][-]{subsection.8.2}{Mexico}{section.8}% 43
+\BOOKMARK [2][-]{subsection.8.3}{Tips for the next journey}{section.8}% 44
+\BOOKMARK [1][-]{section.9}{Management}{}% 45
+\BOOKMARK [2][-]{subsection.9.1}{Season 2010-2011}{section.9}% 46
+\BOOKMARK [2][-]{subsection.9.2}{Season 2011-2012}{section.9}% 47
+\BOOKMARK [2][-]{subsection.9.3}{RoboCup Junior/Dutch Nao Demo Day}{section.9}% 48
+\BOOKMARK [1][-]{section.10}{Evaluation and Future Improvements}{}% 49
+\BOOKMARK [2][-]{subsection.10.1}{Future work}{section.10}% 50
+\BOOKMARK [3][-]{subsubsection.10.1.1}{Line Detection}{subsection.10.1}% 51
+\BOOKMARK [3][-]{subsubsection.10.1.2}{Kinect your Nao: A human interface}{subsection.10.1}% 52
+\BOOKMARK [1][-]{section.11}{Acknowledgements}{}% 53
+\BOOKMARK [1][-]{section.12}{Appendix}{}% 54
+\BOOKMARK [2][-]{subsection.12.1}{Team Poster}{section.12}% 55
+\BOOKMARK [2][-]{subsection.12.2}{Open Challenge Document June}{section.12}% 56
+\BOOKMARK [2][-]{subsection.12.3}{Open Challenge Document July}{section.12}% 57
+\BOOKMARK [2][-]{subsection.12.4}{Press release}{section.12}% 58
+\BOOKMARK [2][-]{subsection.12.5}{File Overview}{section.12}% 59

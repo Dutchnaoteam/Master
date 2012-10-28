@@ -95,12 +95,13 @@ The main problem in the competitions was with the vision. The Naos recognised a 
 Due to the above mentioned problems the first steps towards a calibration tool were made for simple color calibration, as well as a bounding box implementation so that the Naos no longer could find a ball outside of the field.
 
 \subsubsection{Open Challenge}
+For the Open Challenge multiple projects were presented that were worked on by members of the Dutch Nao Team, such as a dynamic tree learning localisation approach and the human interface using the Kinect\cite{DutchNaoTeamTech11}
+The presentation ended up earning the third place of all the open challenge presentations
 
-For the Open Challenge multiple projects were presented that were worked on by members of the Dutch Nao Team, such as \ref{}\ref{}
-The presentation ended up earning the third place of the open challende
+\subsection{Dutch Open}
+In the week of april the 22$^{nd}$, the DNT traveled to Eindhoven to participate in the Dutch Open. There was no real SPL competition at the Open but some demo matches against SPQR were played.
 
 \subsection{RoboCup Mexico}
-
 Twenty-four teams from all over the world competed in the RoboCup 2011. We've played against a few of them:
 \begin{enumerate}
 \item rUNSwift, lost, 0-10
@@ -460,21 +461,10 @@ This section describes the advice to the organizers of next year. The following 
 \item Communicate clearly with the students participating in the team.
 \end{itemize}
 
-\section{Management}
+\section{Public Relations}
 
-\subsection{Season 2010-2011}
-At the start of the project, the Dutch Nao Team (DNT) was split into different groups: {\it Vision}, {\it Motion}, {\it Communication} and {\it Architecture}. Each group consisted of a captain and sufficient members to complete their work. The captains were in control of the groups, as well as being a programmer. Above the captains were two other positions, the manager and advisor. Since the team was large at first, splitting the team seemed like a good idea at the time. It did work because the team started from scratch and had many work to do. After some time, this did not go so well. It became clear that the groups were dividing the DNT by blaming each other for bugs, loss of files and other complications. It also seemed that each group saw itself as a standalone group instead of cooperating with the rest of the team.
-Halfway through the year, this setup was changed. Pairs were formed, which would then work on a single task (e.g. goal recognition, motion). These pairs worked independently and would add their programs only when finished. We also switched from Dropbox to SVN, a huge improvement which made the management of files easier (and tidier as well). 
 
-\subsection{Season 2011-2012}
-The major problem with participation last year was that it was voluntary, this made it hard to demand progress when someone was behind on his work. The second year there will only be members in the team that contribute actively. If anyone outside the team wants to help or contribute to the RoboCup through related work they still can but that will be either on minor projects that do not have a deadline or by helping existing pairs. Members that are unable to do the minimal required work for an extended period of time will have to talk with the manager and advisor, who will decide if a person can stay or has to leave the Dutch Nao Team..
 
-A second problem was that the team started as a large group (23 people). As everyone, at that point, lacked experience in managing, the focus lies on keeping the team small. This makes management and organization easier and everyone in the team will feel more involved.  
-
-\subsection{RoboCup Junior/Dutch Nao Demo Day}
-On May 28th, the DNT had a small stand at the RoboCup Junior at NEMO, where the most recent code was showed off, by letting Naos play soccer on a small pitch which was open for public throughout the day. In collaboration with Dutch Nao Day a small demonstration was given.
- 
-The goal of the Dutch Nao Demo Day is to bring different Nao-owners that live in the Netherlands together, show each other the demonstrations created in the different institutes in the Netherlands and create - in a shared effort - one big demonstration, which is shown at the end of the day in the theatre of the science center NEMO. This was and (will hopefully remain) an excellent opportunity to show the efforts of the Dutch Nao Team to the public. 
 
 \section{Evaluation and Future Improvements}
 
@@ -492,32 +482,6 @@ Line detection was not further explored this year, but would be a good to add to
 To find a line on the field, an image is filtered on white pixels (lines are white). In this filtered image, the Houghlines algorithm, found in OpenCV \cite[p.~156]{Bradski2008}, can find lines. Using (intensity) thresholds, lines with corresponding accumulator value greater than the threshold are returned. It is also possible to input a minimal required length for a line. When a line is partially invisible, the algorithm can reconstruct the line. An additional parameter is the maximum length a gap between lines can be before its not considered to be the same line. 
 Unfortunately, the Houghlines algorithm returns a lot of redundant lines. This is caused by the different thicknesses of lines in a 3D world projected onto a 2D plane. A different threshold for lines further away than lines close by is needed, as currently, the same line close by looks thinner when its further away. The problem that that causes is that the algorithm finds multiple lines on a single line simply because it is so thick that it is not considered to be the same one. To reconstruct these thicker lines, lines that are close to each other, with the same angle, are appended to form a single line. 
 Corners of the field and T-junctions can be found using the data the Houghlines algorithm returns. The Nao can use these as landmarks for localization. The angles found for T-junctions will also contribute to the calibration of the camera, because the 2 lines should always be perpendicular in the real world. The angle between the two lines that form a T-junction found through this algorithm will not always be 90 degrees. Therefore, this angle can be used to recalibrate the camera in order to maximize accuracy of localization. 
-
-\subsubsection{Kinect your Nao: A human interface}
-In June 2011, a second-year project involving the Naos, an XBox Kinect and virtual reality glasses was started. This project had as goal to let a Nao mimic a human operator. Complications involved the balance issues when mimicking legs, the different platforms that were used (as python was used to control the Nao and C++ to extract data from other devices). While largely avoiding the balance issue until closed-loop motions are started, the problem of multiple programming languages was solved through use of a TCP connection between Nao and corresponding programs. 
-
-The TCP server that runs on the Nao is the core of the system. It can connect to a large number of clients which can all send data as long as the protocol for messages is followed. The messages should always be strings so there is no limit to the possible programming languages, as long as a connection to the server can be made. Duplicate messages are not a problem either, since the program only executes the first command in a message containing duplicate (and thus possibly contradicting) joints and angles. The only constraint is that the buffer for the messages is not infinitely big, a message from a client can, in the current program, not be larger than 4096 bytes. The slowest client determines how fast the Nao is able to execute given commands, since the server waits for one message from every client before updating the commands.
-
-After initiating the program with the number of connections as input for the start-function, clients can connect to the TCP server. Once the inputted number of connections is reached, the Nao will start executing commands from the clients.
-The first client that was implemented is a program collecting data from the Xbox Kinect. It calculates the angles for the joints of the Nao that correspond to the angles of the users body. This is done through positions of joints involved in that angle. From these positions vectors are calculated. Using the dot product of the two vectors, the angle between the angle between the two is determined.
-To illustrate this approach: If one wants to calculate the roll of the right shoulder, take the positions of the right elbow($p_{E}$), the right hip($p_{H}$) and the right shoulder($p_{S}$) in order to calculate $\angle p_{E}p_{S}p_{H}$.
-
-Normal trigonometry is used to solve this, because all the points in space are known and thus, the angles are easily calculated. Instead, the dot product of vectors is used. This is because for some joints, three points describing the joint cannot create a triangle in a single plane. For example, the elbow yaw cannot be calculated in a triangular fashion. The elbow yaw is the joint that makes you able to turn you lower arm around the axis of your upper arm. So if it is necessary to create a triangle that calculates the elbow yaw, the positions of the elbow, the hand and another joint in that plane that is perpendicular to the upper arms axis are needed. There is no such joint, therefore the angle can’t be calculated through trigonometry. A solution to this problem is that vectors are used, which do not have to have a common point in order to calculate the angle between them. For instance, for the elbow roll, the vector pointing from the shoulder to the hip and the vector pointing from the elbow to the hand are used. If the dot product between the two is calculated, the angle can easily be determined (where $\theta$ is the angle between the two vectors):
-$$ \vec{a} \cdot \vec{b} = ||\vec{a}|| ||\vec{b}|| \cos{\theta}$$
-The second client collects data from the gyroscope in the Vuzix virtual reality glasses. This data is used to determine two angles, a yaw and pitch, for the head of the Nao (the Nao does not have a neck joint for the roll). It also acts as visual input for the user, acting as a second screen for the computer it connects to.
-To create this visual input, Choreographe, a program by Aldebaran robotics, is used. The benefit of this program is that it can simultaneously show the camera images and the pose of the Nao in simulation. The latter because the real Nao’s body is not visible to users with the glasses on.
-A third client collects gyroscope data from two Wii remotes, as well as information about button presses. This data is used to control the Nao’s hands and wrists (only for Nao Academic version, which has motors in wrists and hands) and to make the Nao walk. Though the use of buttons does not contribute to the idea of a human interface, it is a useful addition to the possibilities of control of the human operator.
-
-With the components that are currently used (the Xbox Kinect, the Vuzix virtual reality glasses, the Wii remotes, the Aldebaran Nao and Choreograph), the program gives the user a camera view and the pose of the Nao in simulation through the glasses. The Nao itself will mimic the users upper body which is made possible through use of the Kinect and Wiimotes, though this can only be seen in simulation if the user is wearing the VR glasses. Gestures or buttons on the Wii remotes activate walking of the Nao. This enables the user to execute simple remote operations, such as lifting a box or pushing a button. It should be noted that calibration of the VR glasses is needed before use of the system with all it’s current components.
-
-\begin{figure}[htb]
-\centering
-\fbox{\includegraphics[width=1\columnwidth]{KiNao_Poses.jpg}}
-\caption{The system in use}
-\label{fig:Duncan}
-\end{figure}
-
-The system implemented allows a human user to control humanoid robots through body motions (see figure \ref{fig:Duncan}). It does not require the user to lift the legs or walk, only the upper body is mimicked. Requirements for use are perhaps a few hours of practice but no knowledge of robotics is needed. It is therefore applicable in any area. A few examples of possible use are teleoperation in dangerous area’s (e.g.\ after natural disasters or warzones), house-holding tasks but also industrial processes. The human interface makes it relatively easy to learn the robot a new task since it can simply mimic the user executing the task. This task is relevant to the RoboCup precisely because of that. While not currently possible, balancing while mimicking a human operator drastically shortens the time needed to design a motion. A user can simply execute a motion while seeing the Nao mimic it. This motion is then recorded and smoothed (removing noise due to inaccuracies by the Kinect, removing control points, etc.). This simplification of motion design makes it possible for an inexperienced (meaning no experience with Naos) user to create basic, but smooth, keyframe motions.
 
 \section{Acknowledgements}
 The Dutch Nao Team likes to thank the following people:

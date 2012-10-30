@@ -253,7 +253,7 @@ Communication between Naos has been proven to work successfully using built-in m
 \begin{figure}[htb]    	
 \centering
 \includegraphics[width=0.7\columnwidth]{cmapFiles.png}
-\caption{Hierarchy of files as used in the RoboCup 2011}
+\caption{Hierarchy of files as used in the RoboCup 2012.}
 \label{fig:File}
 \end{figure}
 The file hierarchy (see figure \ref{fig:File}) that is used prevents the main program (\texttt{soul.py}) from becoming a chaos. The contents of the files are described in more detail in Appendix~\ref{app:file_overview}.
@@ -263,8 +263,26 @@ To make matters even easier, interfaces (\texttt{motionInterface} and \texttt{vi
 It would not be aesthetically pleasing to make these function calls in the main program every time a vision call is made. 
 The vision interface is well used; the motion interface is implemented merely for completeness (as vision is comparable to motion, both are straightforward tasks that do not alter the flow of the main program directly, unlike the game controller and button interface). The game controller and button interface are each specified in a file to make testing and altering individual functions easier.
 
+\subsection{Localisation}
+Two widely acknowledged state-of-the-art techniques were used for localisation of both the Nao, and keeping track of the ball. They will be discussed in the following subsections.
 
-%Removed localisation... Should be added?
+\subsubsection{Particle Filter}
+The Particle Filter, a sequential Monte Carlo method, is used to find the location of a Nao on the field. The pseudocode is given in algorithm \ref{alg:PF}. 
+
+
+A typical Particle Filter, as used in the RoboCup, works as follows:
+\begin{enumerate}
+\item Receive odometry information, which is the walking speed of the Nao.
+\item Update all particles.
+\item Receive visual information, which consists of positions of found features in the field.
+\item Find the samples' new weights, in this step particles outside of the field are given weight 0.
+\item Sample using importance sampling (weight-based). 
+\item Repeat. 
+\end{enumerate}
+
+Only the goal posts were used as features, as line detection was still lacking. Due to the high noise in the measurements of goal posts, the Nao was often unable to locate itself, or particles would converge to undesirable locations (e.g. opposite side of the field, behind the goal). For this reason, the Particle Filter was not used in any of the matches. 
+
+\subsubsection{Kalman Filter}The pseudocode is given in algorithm \ref{alg:KF}.
 
 \subsection{Simulation}
 
